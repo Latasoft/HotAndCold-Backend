@@ -17,6 +17,12 @@ admin.initializeApp({
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+
+admin.initializeApp({
+  credential: admin.credential.cert(require('./hotandcold-15168-firebase-adminsdk-fbsvc-8f106b30ec.json')),
+  databaseURL: 'https://hotandcold-15168.firebaseio.com'
+});
+
 // Middlewares globales
 app.use(express.json()); // Parseo de JSON
 
