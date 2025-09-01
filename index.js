@@ -11,7 +11,7 @@ const { db } = require('./config/firebaseAdmin'); // Importa Firestore desde el 
 // Inicializar Firebase Admin
 admin.initializeApp({
   credential: admin.credential.cert(require('./hotandcold-15168-firebase-adminsdk-fbsvc-8f106b30ec.json')),
-  databaseURL: 'https://hotandcold-15168.firebaseio.com'
+  databaseURL: 'https://console.firebase.google.com/project/hotandcold-15168/firestore/databases/-default-/data'
 });
 
 const app = express();
