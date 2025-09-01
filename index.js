@@ -2,10 +2,17 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 require('dotenv').config();
+const admin = require('firebase-admin');
 
 const verifyToken = require('./middlewares/verifyToken');
 const authRoutes = require('./routes/auth');
 const { db } = require('./config/firebaseAdmin'); // Importa Firestore desde el archivo que creaste
+
+// Inicializar Firebase Admin
+admin.initializeApp({
+  credential: admin.credential.cert(require('./hotandcold-15168-firebase-adminsdk-fbsvc-8f106b30ec.json')),
+  databaseURL: 'https://hotandcold-15168.firebaseio.com'
+});
 
 const app = express();
 const PORT = process.env.PORT || 5000;
